@@ -1,6 +1,6 @@
-import Mongoose, { connect, connection } from 'mongoose'
+const { connect, connection } = require('mongoose')
 
-const connectDB = (address, port, database) => {
+function connectDB(address, port, database) {
 	const mongo_address = `mongodb://${address}:${port}/${database}`
 	connect(mongo_address)
 
@@ -23,4 +23,4 @@ const connectDB = (address, port, database) => {
   return db
 }
 
-export default connectDB
+module.exports = connectDB

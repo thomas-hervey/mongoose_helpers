@@ -1,4 +1,11 @@
-export * from './connection'
-export * from './models'
-export * from './update'
-export * from './utils'
+const { connectDB } = require('./connection')
+const { bulkUpdateIndividuals, addField } = require('./update')
+const { iterateCollection, listDuplicates } = require('./utils')
+
+module.exports = {
+  connectDB,
+  bulkUpdateIndividuals,
+  addField,
+  iterateCollection,
+  listDuplicates
+}

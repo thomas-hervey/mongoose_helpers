@@ -1,4 +1,4 @@
-import  mongoose from 'mongoose'
+const mongoose = require('mongoose')
 const db = mongoose.connection
 
 // NOTE: this *should* add a new field to the schema and add the field with a default,
@@ -35,4 +35,4 @@ const addField = async (Model, field) => {
 	}
 }
 
-export default addField
+module.exports = addField

@@ -1,1 +1,6 @@
-export { createSchema, createModel } from './createModel'
+const { createSchema, createModel } = require('./createModel')
+
+module.exports = {
+  createSchema,
+  createModel
+}

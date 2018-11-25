@@ -24,4 +24,4 @@ const listDuplicates = (Model, groupAttribute) => {
   return aggregation
 }
 
-export default listDuplicates
+module.exports = listDuplicates

@@ -1,2 +1,7 @@
-export { bulkUpdateIndividuals } from './bulkUpdate'
-export { addField } from './addField'
+const { bulkUpdateIndividuals } = require('./bulkUpdate')
+const { addField } = require('./addField')
+
+module.exports = {
+  bulkUpdateIndividuals,
+  addField
+}

@@ -1,4 +1,4 @@
-import { bulkWrite } from 'mongoose';
+const { bulkWrite } = require('mongoose')
 
 const bulkUpdateIndividuals = async (Model, records, filter, updateFunction) => {
 
@@ -7,7 +7,7 @@ const bulkUpdateIndividuals = async (Model, records, filter, updateFunction) => 
       records.map((record) => {
         return {
           updateOne: {
-            filter: () =>  `${filter}` : filter,
+            filter: { filter: filter },
             update: updateFunction(record),
             upsert: true
           }
@@ -22,4 +22,8 @@ const bulkUpdateIndividuals = async (Model, records, filter, updateFunction) => 
   }
 }
 
-export default bulkUpdateIndividuals
+const _setFilter = (filter) => {
+  return { "$": filter }
+}
+
+module.exports = bulkUpdateIndividuals

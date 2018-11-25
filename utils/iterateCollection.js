@@ -7,8 +7,8 @@ const iterateCollection = (model, callback, options) => {
 
 		// iterate cursor documents
 		for (
-			let doc = yield cursor.next()
-			doc != null
+			let doc = yield cursor.next();
+			doc != null;
 			doc = yield cursor.next()
 		) {
 			callback(model, doc, options) // call callback with model and current doc
@@ -22,4 +22,4 @@ const iterateCollection = (model, callback, options) => {
 	})
 }
 
-export default iterateCollection
+module.exports = iterateCollection
