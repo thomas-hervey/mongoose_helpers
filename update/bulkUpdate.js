@@ -26,4 +26,4 @@ const _setFilter = (filter) => {
   return { "$": filter }
 }
 
-module.exports = bulkUpdateIndividuals
+module.exports = { bulkUpdateIndividuals }

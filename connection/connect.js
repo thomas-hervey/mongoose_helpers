@@ -1,12 +1,12 @@
-const { connect, connection } = require('mongoose')
+const mongoose = require('mongoose')
 
-function connectDB(address, port, database) {
+const connectDB = (address, port, database) => {
 	const mongo_address = `mongodb://${address}:${port}/${database}`
-	connect(mongo_address)
+	mongoose.connect(mongo_address)
 
   mongoose.Promise = global.Promise // Get Mongoose to use the global promise library
 
-  const db = connection
+  const db = mongoose.connection
 
   db.on('connected', () => {
 		console.log(`Mongoose default connection open to ${mongo_address}`)
@@ -23,4 +23,4 @@ function connectDB(address, port, database) {
   return db
 }
 
-module.exports = connectDB
+module.exports = { connectDB }

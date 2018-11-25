@@ -1,3 +1,4 @@
 const { connectDB } = require('./connect')
-
-module.exports = { connectDB }
+module.exports = {
+  connectDB: connectDB
+}
